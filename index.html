@@ -12,24 +12,31 @@
             <h1>singolo<span class="text-color-red">*</span></h1>
         </div>
         <nav>
-            <ul class="header-menu">
-                <li class="text-color-red"><a href="#">HOME</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">PORTFOLIO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
+            <ul id="header-menu" class="header-menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#Services">SERVICES</a></li>
+                <li><a href="#Portfolio">PORTFOLIO</a></li>
+                <li><a href="#About">ABOUT</a></li>
+                <li><a href="#Contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
-    <section class="slider">
-        <img class="chev-left" src="assets/images/chevleft.svg" alt="left">
-        <img class="iphone-vertical" src="assets/images/iPhone-Vertical.svg" alt="iPhone-Vertical">
-        <img class="iphone-horizontal" src="assets/images/iPhone-Horizontal.svg" alt="iPhone-Horizontal">
-        <img class="chev-right" src="assets/images/chevright.svg" alt="right">
+    <section id="slider" class="slider">
+        <div id="slider_first" class="slider-block slider_first">
+            <img id="iphone-vertical" class="iphone-vertical" src="assets/images/iPhone-Vertical.svg" alt="iPhone-Vertical">
+            <div id="display_1" class="display display-iphone-vertical"></div>
+            <img id="iphone-horizontal" class="iphone-horizontal" src="assets/images/iPhone-Horizontal.svg" alt="iPhone-Horizontal">
+            <div id="display_2" class="display display-iphone-horizontal"></div>
+        </div>
+        <div id="slider_second" class="slider-block slider_second hidden">
+            <img  class="slider_second" src="assets/images/Slide-2.svg" alt="slider 2">
+        </div>
+        <img id="arrow_left" class="chev-left" src="assets/images/chevleft.svg" alt="left">
+        <img id="arrow_right" class="chev-right" src="assets/images/chevright.svg" alt="right">
     </section>
     <main>
         <section class="main-item__our-services">
-            <h2>Our Services</h2>
+            <h2 id="Services">Our Services</h2>
             <p class="main-text-common">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="container-flex">
                 <article class="main-item custom-design">
@@ -90,7 +97,7 @@
         </section>
         <section class="main-item__portfolio">
             <div class="container-header part2">
-                <h2>
+                <h2 id="Portfolio">
                     Portfolio
                 </h2>
                 <div class="header-text">
@@ -99,15 +106,15 @@
             </div>
             <div>
                 <nav class="slider-menu-filter">
-                    <ul>
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                        <li><a href="#">Artwork</a></li>
+                    <ul id="portfolio-menu">
+                        <li><a href="javascript:void(0)">All</a></li>
+                        <li><a href="javascript:void(0)">Web Design</a></li>
+                        <li><a href="javascript:void(0)">Graphic Design</a></li>
+                        <li><a href="javascript:void(0)">Artwork</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="slider_part2">
+            <div id="slider_part2" class="slider_part2">
                 <img src="assets/images/image_1.png" alt="Image 1">
                 <img src="assets/images/image_2.png" alt="Image 2">
                 <img src="assets/images/image_3.png" alt="Image 3">
@@ -123,7 +130,7 @@
             </div>
         </section>
         <section class="main-item__about-us">
-            <h2>About Us</h2>
+            <h2 id="About">About Us</h2>
             <p class="main-text-common">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat
                 porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="container-flex">
@@ -164,17 +171,17 @@
         </section>
         <section class="container container-part3">
             <article class="main-container_part3">
-                <h2>Get a Quote</h2>
+                <h2 id="Contact">Get a Quote</h2>
                 <p class="main-text-common">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor
                     ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                 </p>
                 <div class="container-flex">
                     <form action="#"  target="_blank">
-                        <input type="text" name="user" placeholder="Name (Requred)" required>
-                        <input type="email" placeholder="Email (Requred)" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Describe your project in detail..." rows="12" cols="50"></textarea>
-                        <button type="submit">Submit</button>
+                        <input id="form-name" type="text" name="user" placeholder="Name (Requred)" required>
+                        <input id="form-email" type="email" placeholder="Email (Requred)" required>
+                        <input id="subject" type="text" placeholder="Subject">
+                        <textarea id="describe" placeholder="Describe your project in detail..." rows="12" cols="50"></textarea>
+                        <button id="submit_form" type="submit">Submit</button>
                     </form>
                     <div class="main-item main-item__info">
                         <h3>Contact Information</h3>
@@ -203,5 +210,14 @@
         </div>
     </footer>
 </div>
+<div id="message-block" class="message-block hidden">
+    <div id="message" class="message">
+        <p>Письмо отправлено</p>
+        <p class="message-text">Тема: <span id="result-subject"></span></p>
+        <p class="message-text">Описание: <span id="result-describe"></span></p>
+        <button id="close-btn">OK</button>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
