@@ -1,3 +1,5 @@
+const CONTAINER = document.getElementById('container_id');
+const HEADER_BURGER = document.getElementById('header-menu__dropdown-id');
 const MENU = document.getElementById('header-menu');
 const PORTFOLIO_MENU = document.getElementById('portfolio-menu');
 const SLIDER = document.getElementById('slider');
@@ -10,13 +12,32 @@ const DISPLAY_2 = document.getElementById('display_2');
 const PORTFOLIO_IMG = document.getElementById('slider_part2');
 const MESSAGE = document.getElementById('close-btn');
 const SUBMIT_FORM =  document.getElementById('submit_form');
-let animation = false;
+const BLUR = document.getElementById('blur');
 
+let animation = false;
 let divChildren = Array.prototype.slice.call(SLIDER.querySelectorAll('.slider-block'));
 let imgChildren = Array.prototype.slice.call(PORTFOLIO_IMG.querySelectorAll('img'));
 
+    HEADER_BURGER.addEventListener('click', (event) =>  {
+        if (CONTAINER.querySelector('header').classList.contains('burger')) {
+            CONTAINER.querySelector('header').classList.remove('burger');
+            document.getElementById('blur').classList.add('hidden');
+            document.querySelector('body').classList.remove('no_scroll');
+        } else {
+            CONTAINER.querySelector('header').classList.add('burger');
+            document.getElementById('blur').classList.remove('hidden');
+            document.querySelector('body').classList.add('no_scroll');
+        }
+    });
+    BLUR.addEventListener('click', (event) => {
+        document.getElementById('blur').classList.add('hidden');
+        CONTAINER.querySelector('header').classList.remove('burger');
+    });
+
     MENU.addEventListener('click', (event) =>  {
         MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
+        CONTAINER.querySelector('header').classList.remove('burger');
+        document.getElementById('blur').classList.add('hidden');
         event.target.classList.add('active');
     });
 
@@ -159,10 +180,10 @@ let imgChildren = Array.prototype.slice.call(PORTFOLIO_IMG.querySelectorAll('img
     });
 
     MESSAGE.addEventListener('click', (event) => {
-        let subject = document.getElementById('subject').value = '';
-        let describe = document.getElementById('describe').value = '';
-        let name = document.getElementById('form-name').value = '';
-        let email = document.getElementById('form-email').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('describe').value = '';
+        document.getElementById('form-name').value = '';
+        document.getElementById('form-email').value = '';
         document.getElementById('result-subject').innerText = '';
         document.getElementById('result-describe').innerText = '';
 

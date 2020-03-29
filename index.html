@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Singolo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div id="container_id" class="container">
     <header>
+        <div id="header-menu__dropdown-id" class="header-menu__dropdown">
+        </div>
         <div class="logo">
             <h1>singolo<span class="text-color-red">*</span></h1>
         </div>
@@ -20,6 +23,7 @@
                 <li><a href="#Contact">CONTACT</a></li>
             </ul>
         </nav>
+
     </header>
     <section id="slider" class="slider">
         <div id="slider_first" class="slider-block slider_first">
@@ -218,6 +222,7 @@
         <button id="close-btn">OK</button>
     </div>
 </div>
+<div id="blur" class="blur hidden"></div>
 <script src="script.js"></script>
 </body>
 </html>
